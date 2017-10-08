@@ -68,6 +68,8 @@ if (jQuery) {
     });
     testAjax();
 
+    //when popup page display then run
+    test3();  //works
 } else {
     // jQuery not loaded
     alert("22");
@@ -92,4 +94,43 @@ function testAjax() {
       }
    });
    return rel;
+}
+
+
+var timer = null;
+var waitTimer = null;
+var interval = -1;
+var secondsToWait = -1;
+var countdownDom = null;
+var options = null;
+var notificationId = null;
+var badgeAdded = false;
+
+function test3(){
+  //当 popup page display then run
+  console.log("test test 2");
+  output("start test 2");
+  interval = 5;
+  timer = setInterval(function () {
+               interval -= 1;
+               showCountDown(interval);
+               if (interval <= 0) {
+                   //clearTimer();
+                  test3_timer();
+                    interval = 5;
+               }
+           }, 1000);
+
+}
+function showCountDown(i){
+  console.log(i);
+    output(i);
+}
+function test3_timer(){
+  output("start test  go ... ");
+}
+function clearTimer() {
+    if (!timer) return;
+    clearInterval(timer);
+    timer = null;
 }
