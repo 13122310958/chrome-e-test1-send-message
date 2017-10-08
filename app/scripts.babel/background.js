@@ -7,6 +7,7 @@ chrome.runtime.onInstalled.addListener(details => {
 chrome.browserAction.setBadgeText({text: '\'gleo'});
 
 console.log('\'Allo \'Allo! Event Page for Browser Action');
+//这里是控制browser 的。及与popup消息交互。处理 browser的行为
 
 function setNumber(){
   var testi = Date.now();
